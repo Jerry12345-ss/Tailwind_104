@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial,MsJhengHeiBold,\5fae\8edf\6b63\9ed1\9ad4,Microsoft JhengHei,Roboto,PingFangTC,sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to bottom,#ffeedf 600px,#fff 600px,#fff 100%);
+}
+
+@media screen and (min-width: 1300px){
+    .container{ 
+        max-width: 1250px;
+    }
+}
