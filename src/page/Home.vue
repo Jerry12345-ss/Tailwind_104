@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <div class="container mx-auto px-4">
+    <div class="containers mx-auto px-6">
         <section data-section="search-content">
             <SearchContent/>
             <SearchSecondContent/>

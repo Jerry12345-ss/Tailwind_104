@@ -40,7 +40,7 @@ const props = defineProps(['isMobile']);
 const style = reactive({
     backgroundColor : '#ff9100',
     color : '#fff',
-    minWidth : '120px',
+    // minWidth : '120px',
     padding : '0.75rem 20px',
     width : '100%',
     borderRadius : '4px',

@@ -16,8 +16,14 @@ body{
     background: linear-gradient(to bottom,#ffeedf 600px,#fff 600px,#fff 100%);
 }
 
-@media screen and (min-width: 1300px){
-    .container{ 
+@media screen and (min-width: 1024px){
+    .containers{ 
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1250px){
+    .container, .containers{ 
         max-width: 1250px;
     }
 }

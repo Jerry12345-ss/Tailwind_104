@@ -1,7 +1,8 @@
 <template>
-    <div class="flex">
-        <div class="left-card bg-white border rounded-md border-orange-300">
+    <div class="flex flex-wrap">
+        <div class="left-card bg-white border rounded-md border-orange-300 col-12 mb-8 lg:mb-0">
             <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container">
+                <!-- 在版面低於 1024 時要處理 -->
                 <button 
                     v-for="(tab, index) in tabs" 
                     :key="tab.name" 
@@ -15,19 +16,26 @@
                 <component :is="computTab" :data="searchSecondContent"></component>
             </div>
         </div>
-        <div class="right-card bg-white rounded-md">
-            <div class="card-name"></div>
-            <div class="card-storedJob">
-                <span class="text-slate-500 font-bold">近期儲存未應徵更多</span>
-                <div class="job">
-                    <div class="jobTitle">
-                        <h5>前端網頁開發工程師(財富管理事業群)</h5>
+        <div class="right-card pl-5">
+            <div class="bg-white rounded-md">
+                <div class="card-name p-4">
+                    <!--  -->
+                </div>
+                <div class="card-storedJob p-4">
+                    <div class="flex justify-between">
+                        <span class="text-slate-500 font-bold">近期儲存未應徵更多</span>
+                        <a href="#">更多</a>
                     </div>
-                    <div class="jobTitle">
-                        <h5>前端網頁開發工程師(財富管理事業群)</h5>
-                    </div>
-                    <div class="jobTitle">
-                        <h5>前端網頁開發工程師(財富管理事業群)</h5>
+                    <div class="job">
+                        <div class="jobTitle">
+                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
+                        </div>
+                        <div class="jobTitle">
+                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
+                        </div>
+                        <div class="jobTitle">
+                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,6 +89,18 @@ const computTab = computed(()=>{
     button.active{
         background-color: #fff;
         color: #ff9100;
+    }
+}
+
+.right-card{
+    width: 324px;
+}
+
+@media screen and (min-width: 1024px){
+    .flex{
+        .left-card{
+            flex: 1;
+        }
     }
 }
 </style>
