@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden lg:block lg:ml-20 mr-10">
+            <div class="hidden lg:block lg:ml-20">
                 <div class="font-semibold text-lg text-teal-500">
                     <a href="#">
                         企業徵才
@@ -45,28 +45,34 @@
         </div>
     </section>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto px-4">
         <section data-section="search-content">
             <SearchContent/>
+            <SearchSecondContent/>
         </section>
     </div>
 </template>
 
 <script setup>
 import SearchContent from '../components/SearchContent.vue';
+import SearchSecondContent from '@/components/SearchSecondContent.vue';
 </script>
 
 <style scoped lang="scss">
 section[data-section="first"]{
     .flex-1{
         .item{
-            &:hover{
-                color: #ff9100 !important;  
+            a{
+                &:hover{
+                    color: #ff9100 !important;  
+                }
             }
         }
 
         .item.active{
-            color: #ff9100 !important;
+            a{
+                color: #ff9100 !important;
+            }
         }
     }
 }

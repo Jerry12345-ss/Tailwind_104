@@ -1,60 +1,63 @@
 <template>
-    <div class="h-48">
-        <Search/>
+    <div>
+        <Search :isMobile="isMobile"/>
 
-        <div class="mb-10 hidden md:block">
+        <div class="mb-10 hidden md:block list">
             <ul class="flex">
                 <li class="mr-5">
-                    <a href="#">無經驗可</a>
+                    <a href="#" class="text-sm">無經驗可</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">最新工作</a>
+                    <a href="#" class="text-sm">最新工作</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">薪水4萬起</a>
+                    <a href="#" class="text-sm">薪水4萬起</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">熱門上市櫃</a>
+                    <a href="#" class="text-sm">熱門上市櫃</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">新鮮人徵才</a>
+                    <a href="#" class="text-sm">新鮮人徵才</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">NEW高薪榜</a>
+                    <a href="#" class="text-sm">NEW高薪榜</a>
                 </li>
                 <li class="mr-5">
-                    <a href="#">AI領頭羊</a>
+                    <a href="#" class="text-sm">AI領頭羊</a>
                 </li>
             </ul>
-        </div>
-
-        <div>
-            <div class="left-card bg-white"></div>
-            <div class="right-card bg-white rounded-md">
-                <div class="card-name"></div>
-                <div class="card-storedJob">
-                    <span class="text-slate-500 font-bold">近期儲存未應徵更多</span>
-                    <div class="job">
-                        <div class="jobTitle">
-                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
-                        </div>
-                        <div class="jobTitle">
-                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
-                        </div>
-                        <div class="jobTitle">
-                            <h5>前端網頁開發工程師(財富管理事業群)</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-import Search from '../components/Custom/Search.vue'
+import { onMounted, ref } from 'vue';
+import Search from '../components/Custom/Search.vue';
+
+const isMobile = ref(false);
+
+onMounted(()=>{
+    window.addEventListener('resize', ()=>{
+        if(window.innerWidth <  800){
+            isMobile.value = true
+        }else{
+            isMobile.value = false;
+        }
+    })
+})
 </script>
 
 <style scoped lang="scss">
+.list{
+    color: #7e7e7e;
+
+    ul{
+        li{
+            a:hover{
+                color: rgb(255, 145, 0);
+            }
+        }
+    }
+}
 </style>
   
