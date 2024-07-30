@@ -2,7 +2,7 @@
     <div>
         <Search :isMobile="isMobile"/>
 
-        <div class="mb-10 hidden md:block list">
+        <div class="mb-8 hidden md:block list">
             <ul class="flex">
                 <li class="mr-5">
                     <a href="#" class="text-sm">無經驗可</a>
@@ -36,6 +36,7 @@ import Search from '../components/Custom/Search.vue';
 
 const isMobile = ref(false);
 
+// 這邊如果重新整理會無法, 也就是說在 size < 800 但沒有觸發 resize 時會無效 => 要處理
 onMounted(()=>{
     window.addEventListener('resize', ()=>{
         if(window.innerWidth <  800){

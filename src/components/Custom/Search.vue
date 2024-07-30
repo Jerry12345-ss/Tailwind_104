@@ -1,28 +1,28 @@
 <template>
-    <div class="mt-4 flex items-center mb-3">
+    <div class="mt-8 flex items-center mb-3">
         <template v-if="!props.isMobile">
-            <div class="col-10 flex bg-white border rounded-md input-container">
-                <div class="search-input col-4">
+            <div class="w-10/12 basis-10/12 flex bg-white border rounded-md input-container">
+                <div class="search-input w-4/12 basis-4/12">
                     <input type="text" class="border-none py-3 px-3 outline-none rounded-l-md w-full" placeholder="關鍵字"/>
                 </div>
-                <div class="region-btn col-4">
+                <div class="region-btn w-4/12 basis-4/12">
                     <button class="flex w-full h-full items-center px-3">
                         <span class="font-bold" style="color: #a9a9a9;">地區</span>
                     </button>
                 </div>
-                <div class="job-btn col-4">
+                <div class="job-btn w-4/12 basis-4/12">
                     <button class="flex w-full h-full items-center px-3">
                         <span class="font-bold" style="color: #a9a9a9;">職務類別</span>
                     </button>
                 </div>
             </div>
-            <div class="col-2 pl-6">
+            <div class="w-2/12 basis-2/12 pl-6">
                 <!-- hover 處理 -->
                 <Button text="搜尋" :style="style"></Button>
             </div>
         </template>
         <template v-else>
-            <div class="col-12 flex bg-white border rounded-md input-container">
+            <div class="w-full basis-full flex bg-white border rounded-md input-container">
                 <div class="search-input col-4">
                     <input type="text" class="border-none py-3 px-3 outline-none rounded-l-md w-full" placeholder="關鍵字"/>
                 </div>
