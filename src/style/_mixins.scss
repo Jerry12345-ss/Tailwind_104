@@ -1,0 +1,17 @@
+@mixin ipad-m{
+    @media screen and (min-width : 1024px){
+        @content;
+    }
+}
+
+@mixin pc-s{
+    @media screen and (min-width : 1280px){
+        @content;
+    }
+}
+
+@mixin pc-mm{
+    @media screen and (min-width : 1536px){
+        @content
+    }
+}

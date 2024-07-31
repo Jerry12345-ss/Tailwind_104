@@ -5,11 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,vue}",
   ],
   theme: {
-    // colors : {
-    //   white : '#fff',
-    //   orange : '#ff9100'
-    // },
-    extend: {},
+    extend: {
+      colors : {
+        'primary' : '#ff7800',
+        'secondary' : '#ff9100',
+        'link' : '#1654b9',
+        'link_hover' : '#659ffa'
+      }
+    },
   },
   plugins: [],
 }

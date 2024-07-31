@@ -1,7 +1,7 @@
 <template>
     <div class="mt-8 flex items-center mb-3">
         <template v-if="!props.isMobile">
-            <div class="w-10/12 basis-10/12 flex bg-white border rounded-md input-container">
+            <div class="w-10/12 basis-10/12 flex bg-white border rounded-md input-container border-primary">
                 <div class="search-input w-4/12 basis-4/12">
                     <input type="text" class="border-none py-3 px-3 outline-none rounded-l-md w-full" placeholder="關鍵字"/>
                 </div>
@@ -18,7 +18,7 @@
             </div>
             <div class="w-2/12 basis-2/12 pl-6">
                 <!-- hover 處理 -->
-                <Button text="搜尋" :style="style"></Button>
+                <Button text="搜尋" :style="style" class="bg-secondary hover:bg-primary"></Button>
             </div>
         </template>
         <template v-else>
@@ -38,7 +38,6 @@ import Button from './Button.vue';
 const props = defineProps(['isMobile']);
 
 const style = reactive({
-    backgroundColor : '#ff9100',
     color : '#fff',
     // minWidth : '120px',
     padding : '0.75rem 20px',
@@ -50,8 +49,6 @@ const style = reactive({
 
 <style scoped lang="scss">
 .input-container{
-    border-color: #ff9100;
-
     input::placeholder{
         color: #a9a9a9;
         font-weight: bold;

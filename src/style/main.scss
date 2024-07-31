@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import url('./flex.scss');
+@import './mixins';
 
 *{
     margin: 0;
@@ -17,14 +17,20 @@ body{
     overflow-x: hidden;
 }
 
-@media screen and (min-width: 1024px){
-    .containers{ 
+@include ipad-m{
+    .containers{
         max-width: 1024px;
     }
 }
 
-@media screen and (min-width: 1250px){
-    .container, .containers{ 
-        max-width: 1250px;
+@include pc-s{
+    .containers{
+        max-width: 1280px;
+    }
+}
+
+@include pc-mm{
+    .containers{
+        max-width: 1536px;
     }
 }

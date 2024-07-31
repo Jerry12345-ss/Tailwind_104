@@ -6,7 +6,7 @@
             </div>
             <div class="content-container w-full basis-full lg:pl-4 lg:w-7/12 lg:basis-7/12">
                 <div v-for="(item, index) in data.list" :key="item.title">
-                    <h5 class="pl-4 font-bold whitespace-normal lg:truncate lg:mt-0" :class="{ 'mt-3' : index === 0 }">{{ item.title }}</h5>
+                    <h5 class="pl-4 font-bold whitespace-normal lg:truncate lg:mt-0 hover:text-primary cursor-pointer" :class="{ 'mt-3' : index === 0 }">{{ item.title }}</h5>
                     <p class="text-gray-500 text-sm pl-4 whitespace-normal lg:truncate py-2">{{ item.text }}</p>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                 <div class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: rgb(255, 145, 0);transform: ;msFilter:;"><circle cx="12" cy="7.5" r="1.5"></circle><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M16.5 10.5 16 9l-3 1h-2L8 9l-.5 1.5 3 1V13L9 17.25l1.5.75 1.25-3.5h.5L13.5 18l1.5-.75L13.5 13v-1.5l3-1z"></path></svg>
                     <div class="ml-2">
-                        <h5 class="font-bold">{{ item.title }}</h5>
+                        <h5 class="font-bold hover:text-primary cursor-pointer">{{ item.title }}</h5>
                         <p class="text-gray-500 text-sm">{{ item.text }}</p>
                     </div>
                 </div>
@@ -31,10 +31,11 @@ const { data } = defineProps(['data']);
 </script>
 
 <style scoped lang="scss">
+@import '../../style/flex.scss';
+
 .p-5{
     .flex{
         .img-container{
-            // flex : 
             overflow: hidden;
 
             img{
@@ -68,8 +69,7 @@ const { data } = defineProps(['data']);
 @media screen and (min-width : 420px){
     .footer-container{
         .footer-item{
-            flex : 50%;
-            max-width : 50%;
+            @include flex_setting(6);
         }
     }
 }
@@ -77,8 +77,7 @@ const { data } = defineProps(['data']);
 @media screen and (min-width : 750px){
     .footer-container{
         .footer-item{
-            flex : 25%;
-            max-width : 25%;
+            @include flex_setting(3);
         }
     }
 }
