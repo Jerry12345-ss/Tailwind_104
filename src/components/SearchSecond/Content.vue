@@ -1,5 +1,5 @@
 <template>
-    <div class="p-5 pb-0">
+    <div class="p-5 pb-0 2xl:px-8 2xl:pb-0">
         <div class="flex flex-wrap border-b-2 pb-5">
             <div class="img-container w-full basis-full rounded-md lg:w-5/12 lg:basis-5/12">
                 <img :src="data.img" :alt="data.name" class="w-full h-full object-cover">
@@ -79,6 +79,12 @@ const { data } = defineProps(['data']);
         .footer-item{
             @include flex_setting(3);
         }
+    }
+}
+
+@media screen and (min-width : 1280px){
+    img{
+        max-height: 180px;
     }
 }
 </style>

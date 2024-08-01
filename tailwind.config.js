@@ -11,6 +11,9 @@ export default {
         'secondary' : '#ff9100',
         'link' : '#1654b9',
         'link_hover' : '#659ffa'
+      },
+      screens: {
+        '1xl' : '1280px'
       }
     },
   },

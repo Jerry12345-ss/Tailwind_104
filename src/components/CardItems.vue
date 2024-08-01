@@ -1,9 +1,12 @@
 <template>
-    <div class="item-container border rounded-md p-4 bg-white">{{ item.name }}</div>
+    <div class="item-container border rounded-md p-5 bg-white">
+        <slot name="header"></slot>
+        <slot></slot>
+        <slot name="footer"></slot>
+    </div>
 </template>
 
 <script setup>
-const { item } = defineProps(['item']);
 </script>
 
 <style scoped lang="scss">
