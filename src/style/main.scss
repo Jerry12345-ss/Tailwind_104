@@ -13,11 +13,15 @@
 
 body{
     min-height: 100vh;
-    background: linear-gradient(to bottom,#ffeedf 600px,#fff 600px,#fff 100%);
     overflow-x: hidden;
 }
 
 @include ipad-m{
+    body{
+        // 這邊的寫法是告訴 CSS 說現在從 0% ~ 700px 的位置都是 #ffeedf 顏色, 再從 700px 這個位置到 100% 都是 #fff 顏色
+        background: linear-gradient(to bottom,#ffeedf 700px,#fff 700px,#fff 100%);
+    }
+
     .containers{
         max-width: 1024px;
     }

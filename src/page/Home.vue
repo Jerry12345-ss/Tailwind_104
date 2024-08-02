@@ -43,7 +43,7 @@
         </div>
     </section>
 
-    <div class="containers mx-auto px-6 mb-6">
+    <div class="containers mx-auto px-6 mb-6 search-content py-3 lg:py-0">
         <section data-section="search-content">
             <SearchContent/>
             <SearchSecondContent/>
@@ -233,6 +233,10 @@ section[data-section="first"]{
             }
         }
     }
+}
+
+.containers.search-content{
+    background-color: #ffeedf;
 }
 </style>
   

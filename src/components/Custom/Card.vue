@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container bg-white rounded py-4 px-7">
+    <div class="card-container bg-white rounded-xl py-4 px-7">
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>

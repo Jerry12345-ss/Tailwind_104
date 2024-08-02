@@ -1,23 +1,25 @@
 <template>
     <div class="flex flex-wrap">
-        <div class="left-card bg-white border rounded-md border-orange-300 col-12 mb-8 lg:mb-0">
-            <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container">
+        <div class="left-card bg-white border rounded-xl border-orange-300 col-12 mb-8 lg:mb-0">
+            <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container flex">
                 <!-- 在版面低於 1024 時要處理 -->
-                <button 
-                    v-for="(tab, index) in tabs" 
-                    :key="tab.name" 
-                    class="tab-btn font-bold text-gray-500 px-7 py-3 hover:text-primary"
-                    :class="{ active : tab.name === currentTab, 'rounded-l-md' : index === 0 }"
-                    @click="()=>{ currentTab = tab.name }">
-                    {{ tab.name }}
-                </button>
+                <div class="flex-1 flex lg:block">
+                    <button 
+                        v-for="(tab, index) in tabs" 
+                        :key="tab.name" 
+                        class="tab-btn font-bold text-gray-500 px-7 py-3 hover:text-primary"
+                        :class="{ active : tab.name === currentTab, 'rounded-l-xl' : index === 0, 'rounded-r-xl lg:rounded-r-none' : index === tabs.length-1 }"
+                        @click="()=>{ currentTab = tab.name }">
+                        {{ tab.name }}
+                    </button>
+                </div>
             </div>
             <div class="tabContent-container">
                 <component :is="computTab" :data="searchSecondContent"></component>
             </div>
         </div>
         <div class="right-card lg:pl-5 flex-1 lg:flex-none">
-            <div class="bg-white rounded-md h-full border">
+            <div class="bg-white rounded-xl h-full">
                 <div class="card-name p-4 flex justify-between items-center" style="border-bottom: 1px solid #e5e7eb;">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: rgb(255, 145, 0);transform: ;msFilter:;"><circle cx="12" cy="7.5" r="1.5"></circle><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M16.5 10.5 16 9l-3 1h-2L8 9l-.5 1.5 3 1V13L9 17.25l1.5.75 1.25-3.5h.5L13.5 18l1.5-.75L13.5 13v-1.5l3-1z"></path></svg>
@@ -100,10 +102,21 @@ const computTab = computed(()=>{
 </script>
 
 <style scoped lang="scss">
+@import '../style/flex.scss';
+
 .left-card{
-    button.active{
-        background-color: #fff;
-        color: #ff8700;
+    .tabBtn-container{
+        button{
+            @include flex_setting(3); 
+            padding-left: 1vw;
+            padding-right: 1vw;
+            font-size: 13px;
+        }
+
+        button.active{
+            background-color: #fff;
+            color: #ff8700;
+        }
     }
 }
 
@@ -114,6 +127,18 @@ const computTab = computed(()=>{
         a{
             transition: all .1s ease-out;
         }
+    }
+}
+
+@media screen and (min-width: 640px){
+    .left-card{
+        .tabBtn-container{
+            button{
+                padding-left: 1.75rem;
+                padding-right: 1.75rem;
+                font-size: 16px;
+            }
+        } 
     }
 }
 
