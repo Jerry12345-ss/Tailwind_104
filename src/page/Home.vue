@@ -89,7 +89,27 @@
                     <h4 class="font-bold text-xl pl-4 mb-2">精選企業</h4>
                 </template>
                 <template #default>
-                    <!-- <CardList :data="dataStatus.data" cardTitle="精選企業" class="grid gap-4 grid-rows-1 grid-cols-1 sm:grid-rows-4 sm:grid-cols-2 1xl:grid-rows-2 1xl:grid-cols-4"/> -->
+                    <template v-if="isMobile">
+                        <AutoSwiper title="精選企業" :data="swiperContent.featured" class="mt-6"/>
+                    </template>
+                    <template v-else>
+                        <div class="grid gap-4 grid-rows-1 grid-cols-2 mb-4 mt-6">
+                            <CardItems v-for="item in swiperContent.featured" :key="item" style="padding: 0;">
+                                <div class="flex cursor-pointer featured-container flex-col sm:flex-row">
+                                    <div class="left-content rounded-t-lg w-full sm:rounded-tr-none sm:rounded-l-lg" style="width: 230px; height: 164px">
+                                        <img :src="item.img" :alt="item.title" class="w-full h-full rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg">
+                                    </div>
+                                    <div class="flex flex-col right-content p-4">
+                                        <div class="text-link font-bold pb-2 cart-title">{{ item.title }}</div>
+                                        <div class="text-sm text-gray-500 pb-2">{{ item.subtitle }}</div>
+                                        <ul class="list-disc">
+                                            <li v-for="data in item.content" :key="data" class="text-sm ml-5 pb-1">{{ data }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </CardItems>
+                        </div>
+                    </template>
                 </template>
                 <template #footer></template>
             </Card>
@@ -135,7 +155,7 @@
                     <h4 class="font-bold text-xl pl-4 mb-2">熱門企業</h4>
                 </template>
                 <template #default>
-                    <!-- <CardList :data="dataStatus.data" cardTitle="熱門企業" class="grid gap-4 grid-rows-1 grid-cols-1 sm:grid-rows-4 sm:grid-cols-2 1xl:grid-rows-2 1xl:grid-cols-4"/> -->
+                    <AutoSwiper title="熱門企業" :data="swiperContent.popular" class="mt-6"/>
                 </template>
                 <template #footer></template>
             </Card>
@@ -148,11 +168,15 @@ import SearchContent from '../components/SearchContent.vue';
 import SearchSecondContent from '@/components/SearchSecondContent.vue';
 import Card from '@/components/Custom/Card.vue';
 import tabData from '../data/TabData';
-import { onMounted, reactive, watch, ref } from 'vue';
+import { onMounted, reactive, watch, ref, onUnmounted } from 'vue';
 import axios from 'axios';
 import CardList from '@/components/CardList.vue';
 import Tab from '@/components/Custom/Tab.vue';
 import Loading from '@/components/Custom/Loading.vue';
+import AutoSwiper from '@/components/Custom/AutoSwiper.vue';
+import swiperContent from '@/data/swiperData';
+import { useCheck } from '@/composable/useCheck';
+import CardItems from '@/components/CardItems.vue';
 
 const properJobStatus = reactive({
     data : null,
@@ -169,14 +193,17 @@ const properCompanyStatus = reactive({
 const activeProperJob = ref('為你推薦');
 const activePorperCompany = ref('為你推薦');
 
-onMounted(async()=>{
+const { isMobile, checkInnerWidth } = useCheck();
+
+onMounted(()=>{
+    checkInnerWidth();
+    window.addEventListener('resize', checkInnerWidth);
+
     properJobStatus.loading = true;
     properCompanyStatus.loading = true;
 
-    console.log('dsfs')
-
-    const fetcchProperJob = await axios.get('https://json-server-vercel-jetest.vercel.app/company');
-    const fetchProperCompany = await axios.get('https://json-server-vercel-jetest.vercel.app/company');
+    const fetcchProperJob = axios.get('https://json-server-vercel-jetest.vercel.app/company');
+    const fetchProperCompany = axios.get('https://json-server-vercel-jetest.vercel.app/company');
 
     Promise.allSettled([fetcchProperJob, fetchProperCompany])
     .then(result =>{
@@ -188,7 +215,11 @@ onMounted(async()=>{
     }).finally(()=>{
         properJobStatus.loading = false;
         properCompanyStatus.loading = false;
-    })
+    });
+});
+
+onUnmounted(()=>{
+    window.removeEventListener('resize', checkInnerWidth);
 });
 
 watch(activeProperJob, async()=>{
@@ -225,6 +256,8 @@ watch(activePorperCompany, async()=>{
 </script>
 
 <style scoped lang="scss">
+@import '../style/flex.scss';
+
 section[data-section="first"]{
     .grid{
         .item.active{

@@ -22,7 +22,7 @@
             </div>
         </template>
         <template v-else>
-            <div class="w-full basis-full flex bg-white border rounded-md input-container">
+            <div class="w-full basis-full flex bg-white border rounded-md input-container border-primary">
                 <div class="search-input col-4">
                     <input type="text" class="border-none py-3 px-3 outline-none rounded-l-md w-full" placeholder="關鍵字"/>
                 </div>

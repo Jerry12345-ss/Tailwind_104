@@ -39,5 +39,6 @@ npm run lint
 ** Header 問題會有點小麻煩 => 在小板面時有點難處理 **
 ** 搜尋框小板面的部分在搜尋時可能不搞, 因為大版面也沒搞 **
 
-1. 搜尋框 resize 那裡不能用 resize 處理
+1. swiper 的 bullet 與 swiper-wrapper 在 CSS 上的處理不太會動...
+2. 精選企業在最小板面時要處理圖片/大小問題, 以及當 hover 時 title 的文字顏色要變色
 -->

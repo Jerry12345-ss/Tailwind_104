@@ -1,5 +1,5 @@
 <template>
-    <div class="item-container border rounded-md p-5 bg-white">
+    <div class="item-container border rounded-lg p-5 bg-white">
         <slot name="header"></slot>
         <slot></slot>
         <slot name="footer"></slot>

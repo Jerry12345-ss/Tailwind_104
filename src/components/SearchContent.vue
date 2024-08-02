@@ -31,21 +31,21 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import Search from '../components/Custom/Search.vue';
+import { useCheck } from '@/composable/useCheck';
 
-const isMobile = ref(false);
+const { isMobile, checkInnerWidth } = useCheck();
 
-// 這邊如果重新整理會無法, 也就是說在 size < 800 但沒有觸發 resize 時會無效 => 要處理
 onMounted(()=>{
-    window.addEventListener('resize', ()=>{
-        if(window.innerWidth <  800){
-            isMobile.value = true
-        }else{
-            isMobile.value = false;
-        }
-    })
-})
+    checkInnerWidth();
+
+    window.addEventListener('resize', checkInnerWidth);
+});
+
+onUnmounted(()=>{
+    window.removeEventListener('resize', checkInnerWidth);
+});
 </script>
 
 <style scoped lang="scss">

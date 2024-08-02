@@ -23,11 +23,6 @@
                 </template>
             </CardItems>
         </template>
-        <template v-else-if="cardTitle === '精選企業'">
-            <CardItems v-for="item in data" :key="item.id">
-                <!--  -->
-            </CardItems>
-        </template>
         <template v-else-if="cardTitle === '適合你的好公司'">
             <CardItems v-for="item in data" :key="item.id">
                 <template #default>
@@ -50,18 +45,10 @@
                             <span v-for="job in item.job" :key="job.id" class="py-2 px-2 bg-white rounded-md font-medium text-gray-500 border border-gray-200 mt-2 mr-2 text-sm hover:text-primary cursor-pointer hover:border-primary">{{ job.name }}</span>
                         </div>
                         <div class="pt-5 text-center">
-                            <span class="text-primary cursor-pointer font-medium">查看工作機會(15)</span>
+                            <span class="text-primary cursor-pointer font-semibold">查看工作機會(15)</span>
                         </div>
                     </div>
                 </template>
-            </CardItems>
-        </template>
-        <template v-else-if="cardTitle === '熱門企業'">
-            <!-- Swiper -->
-            <CardItems v-for="item in data" :key="item.id">
-                <template #header></template>
-                <template #default></template>
-                <template #footer></template>
             </CardItems>
         </template>
     </div>
