@@ -1,6 +1,6 @@
 <template>
     <section class="bg-white" data-section="first">
-        <div class="container mx-auto px-6 w-full py-4 lg:py-0 flex items-center lg:h-16 justify-center">
+        <div class="containers mx-auto px-6 w-full py-4 lg:py-0 flex items-center lg:h-16 justify-center">
             <div class="lg:ml-28 h-full grid sm:gap-7 lg:gap-14 sm:grid-rows-3 sm:grid-cols-2 md:grid-rows-2 md:grid-cols-3 lg:flex lg:flex-1 lg:justify-center">
                 <div class="active font-bold text-gray-500 text-lg item h-full flex items-center mb-4 md:mb-0 justify-center">
                     <a href="#" class="hover:text-primary">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="containers mx-auto px-6 mb-6">
-        <section data-section="properJob-content containers_card">
+        <section data-section="properJob-content ">
             <Card title="適合你的好工作" :tabs="tabData.properJob">
                 <template #header>
                     <h4 class="font-bold text-xl pl-4 mb-2">適合你的好工作</h4>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="containers mx-auto px-6 mb-6">
-        <section data-section="featured-content containers_card">
+        <section data-section="featured-content ">
             <Card title="精選企業">
                 <template #header>
                     <h4 class="font-bold text-xl pl-4 mb-2">精選企業</h4>
@@ -95,8 +95,8 @@
                     <template v-else>
                         <div class="grid gap-4 grid-rows-1 grid-cols-2 mb-4 mt-6">
                             <CardItems v-for="item in swiperContent.featured" :key="item" style="padding: 0;">
-                                <div class="flex cursor-pointer featured-container flex-col sm:flex-row">
-                                    <div class="left-content rounded-t-lg w-full sm:rounded-tr-none sm:rounded-l-lg" style="width: 230px; height: 164px">
+                                <div class="flex cursor-pointer featured-container flex-col sm:flex-row item-card">
+                                    <div class="left-content rounded-t-lg w-full sm:rounded-tr-none sm:rounded-l-lg" style="width: 190px; height: 164px">
                                         <img :src="item.img" :alt="item.title" class="w-full h-full rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg">
                                     </div>
                                     <div class="flex flex-col right-content p-4">
@@ -117,7 +117,7 @@
     </div>
 
     <div class="containers mx-auto px-6 mb-6">
-        <section data-section="properCompany-content containers_card">
+        <section data-section="properCompany-content ">
             <Card title="適合你的好公司" :tabs="tabData.properCompany">
                 <template #header>
                     <h4 class="font-bold text-xl pl-4 mb-2">適合你的好公司</h4>
@@ -149,7 +149,7 @@
     </div>
 
     <div class="containers mx-auto px-6 mb-6">
-        <section data-section="popularEnterprise-content containers_card">
+        <section data-section="popularEnterprise-content ">
             <Card title="熱門企業">
                 <template #header>
                     <h4 class="font-bold text-xl pl-4 mb-2">熱門企業</h4>
@@ -267,6 +267,11 @@ section[data-section="first"]{
         }
     }
 }
+
+section[data-section="featured-content"]{
+    background-color: red;
+}
+
 
 .containers.search-content{
     background-color: #ffeedf;

@@ -1,7 +1,10 @@
 <template>
     <Swiper 
+        :autoplay="{
+            delay : 4000
+        }"
         :slidesPerView="1"
-        :spaceBetween="10"
+        :spaceBetween="20"
         :pagination="{
             clickable : true
         }"
@@ -38,12 +41,12 @@
             <template v-else>
                 <CardItems class="mb-10" style="padding: 0;">
                     <template #default>
-                        <div class="flex cursor-pointer featured-container flex-col sm:flex-row">
+                        <div class="flex cursor-pointer featured-container item-card flex-col sm:flex-row">
                             <div class="left-content rounded-t-lg w-full sm:rounded-tr-none sm:rounded-l-lg">
                                 <img :src="item.img" :alt="item.title" class="w-full h-full rounded-t-lg sm:rounded-tr-none sm:rounded-l-lg object-cover">
                             </div>
                             <div class="flex flex-col right-content p-4">
-                                <div class="text-link font-bold pb-2 cart-title">{{ item.title }}</div>
+                                <div class="text-link font-bold pb-2">{{ item.title }}</div>
                                 <div class="text-sm text-gray-500 pb-2">{{ item.subtitle }}</div>
                                 <ul class="list-disc">
                                     <li v-for="data in item.content" :key="data" class="text-sm ml-5 pb-1">{{ data }}</li>
@@ -81,6 +84,10 @@ const { title, data } = defineProps(['title', 'data']);
         // display: flex;
         // justify-content: center;
         // align-items: center;
+
+        .left-content{
+            height: 200px;
+        }
     }
   }
 }
@@ -96,8 +103,8 @@ const { title, data } = defineProps(['title', 'data']);
 @media screen and (min-width : 640px){
    .featured-container{
         .left-content{
-            width: 230px;
-            height: 164px;
+            width: 200px;
+            height: 164px !important;
         }
     } 
 }

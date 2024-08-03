@@ -1,5 +1,5 @@
 <template>
-    <span class="py-2 px-3 bg-white rounded-sm font-medium text-gray-500 hover:text-primary cursor-pointer mt-4 mr-4" :class="{ active : tab.title === modelValue }" @click="handleTab">
+    <span class="py-2 px-3 bg-white rounded-sm font-bold text-gray-500 hover:text-primary cursor-pointer mt-4 mr-4" :class="{ active : tab.title === modelValue }" @click="handleTab">
         {{ tab.title }}
     </span>
 </template>

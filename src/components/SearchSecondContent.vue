@@ -1,8 +1,7 @@
 <template>
     <div class="flex flex-wrap">
         <div class="left-card bg-white border rounded-xl border-orange-300 col-12 mb-8 lg:mb-0">
-            <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container flex">
-                <!-- 在版面低於 1024 時要處理 -->
+            <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container flex rounded-t-xl">
                 <div class="flex-1 flex lg:block">
                     <button 
                         v-for="(tab, index) in tabs" 

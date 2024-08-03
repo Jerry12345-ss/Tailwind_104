@@ -29,12 +29,12 @@ body{
 
 @include pc-s{
     .containers{
-        max-width: 1280px;
+        max-width: 1250px;
     }
 }
 
 @include pc-mm{
     .containers{
-        max-width: 1536px;
+        max-width: 1468px;
     }
 }

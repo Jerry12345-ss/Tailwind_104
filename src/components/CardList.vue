@@ -5,15 +5,15 @@
                 <template #default>
                     <div class="flex flex-col">
                         <div class="py-1">
-                            <span class="text-link font-medium pb-2 hover:text-link_hover cursor-pointer">{{ item.job[0].name }}</span>
+                            <span class="text-link font-bold pb-2 hover:text-link_hover cursor-pointer">{{ item.job[0].name }}</span>
                         </div>
                         <div class="py-1">
-                            <span class="text-link font-medium pb-2 hover:text-link_hover cursor-pointer">{{item.name}}</span>
+                            <span class="text-link font-bold pb-2 hover:text-link_hover cursor-pointer">{{item.name}}</span>
                         </div>
                         <div class="flex flex-wrap py-1 item-data">
-                            <span class="font-medium text-sm">{{ item.address }}</span>
-                            <span class="font-medium text-sm">{{ item.year }}</span>
-                            <span class="font-medium text-sm">{{ item.education }}</span>
+                            <span class="font-bold text-sm">{{ item.address }}</span>
+                            <span class="font-bold text-sm">{{ item.year }}</span>
+                            <span class="font-bold text-sm">{{ item.education }}</span>
                         </div>
                         <div class="flex py-1 justify-between font-bold text-sm">
                             <div class="text-primary">{{ item.money }}</div>
@@ -31,7 +31,7 @@
                             <div class="border rounded p-2 w-14 h-14">
                                 <img src="../assets/logo.svg" alt="logo" class="w-full h-full">
                             </div>
-                            <span class="ml-4 text-link font-medium hover:text-link_hover cursor-pointer">{{ item.name }}</span>
+                            <span class="ml-4 text-link font-bold hover:text-link_hover cursor-pointer">{{ item.name }}</span>
                         </div>
                         <div class="flex pt-5 items-baseline">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-4 h-4 fill-gray-400"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
@@ -42,7 +42,7 @@
                             <span class="pl-2">{{ item.category }}</span>
                         </div>
                         <div class="flex flex-wrap">
-                            <span v-for="job in item.job" :key="job.id" class="py-2 px-2 bg-white rounded-md font-medium text-gray-500 border border-gray-200 mt-2 mr-2 text-sm hover:text-primary cursor-pointer hover:border-primary">{{ job.name }}</span>
+                            <span v-for="job in item.job" :key="job.id" class="py-2 px-2 bg-white rounded-md font-bold text-gray-500 border border-gray-200 mt-2 mr-2 text-sm hover:text-primary cursor-pointer hover:border-primary">{{ job.name }}</span>
                         </div>
                         <div class="pt-5 text-center">
                             <span class="text-primary cursor-pointer font-semibold">查看工作機會(15)</span>

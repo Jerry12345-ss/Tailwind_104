@@ -13,7 +13,7 @@ export default {
         'link_hover' : '#659ffa'
       },
       screens: {
-        '1xl' : '1280px'
+        '1xl' : '1350px'
       }
     },
   },
