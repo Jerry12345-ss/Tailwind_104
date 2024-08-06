@@ -1,7 +1,6 @@
 <template>
-    <div class="nav-list">
-        <!-- hover 時要變色, 還沒弄 -->
-        <NavItem v-for="(item,index) in navContent" :key="item.title" :item="item" class="mr-2 cursor-pointer" :last="index === (navContent.length - 1)" v-model:active="currentNav"/>
+    <div class="nav-list items-center relative">
+        <NavItem v-for="(item, index) in navContent" :key="item.title" :item="item" class="mr-2 cursor-pointer" v-model:active="currentNav" :lastSecond="index === (navContent.length -2)"/>
     </div>
 </template>
 

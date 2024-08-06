@@ -7,7 +7,7 @@
                 </div>
                 <NavList class="hidden lg:flex text-sm"/>
             </div>
-            <div class="logo-container w-32 mx-4 lg:w-40 lg:mx-0">
+            <div class="logo-container min-w-32 w-32 mx-4 lg:w-40 lg:mx-0">
                 <img src="../../assets/img/104_logo.png" alt="logo" class="w-full h-full">
             </div>
             <div class="mobile-function flex items-center flex-1 justify-end">
