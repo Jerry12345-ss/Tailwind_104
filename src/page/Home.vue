@@ -276,5 +276,11 @@ section[data-section="featured-content"]{
 .containers.search-content{
     background-color: #ffeedf;
 }
+
+@media screen and (min-width : 1024px){
+    .containers.search-content{
+        background-color: transparent
+    }
+}
 </style>
   
