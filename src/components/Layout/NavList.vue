@@ -1,6 +1,6 @@
 <template>
-    <div class="nav-list items-center relative">
-        <NavItem v-for="(item, index) in navContent" :key="item.title" :item="item" class="mr-2 cursor-pointer" v-model:active="currentNav" :lastSecond="index === (navContent.length -2)"/>
+    <div class="nav-list items-center relative h-full">
+        <NavItem v-for="(item, index) in navContent" :key="item.title" :item="item" class="mr-2 cursor-default" v-model:active="currentNav" :lastSecond="index === (navContent.length -2)"/>
     </div>
 </template>
 

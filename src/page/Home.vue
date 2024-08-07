@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-white" data-section="first">
+    <section class="bg-white" data-section="first" style="padding-top: 55px;">
         <div class="containers mx-auto px-6 w-full py-4 lg:py-0 flex items-center lg:h-16 justify-center">
             <div class="lg:ml-28 h-full grid sm:gap-7 lg:gap-14 sm:grid-rows-3 sm:grid-cols-2 md:grid-rows-2 md:grid-cols-3 lg:flex lg:flex-1 lg:justify-center">
                 <div class="active font-bold text-gray-500 text-lg item h-full flex items-center mb-4 md:mb-0 justify-center">
