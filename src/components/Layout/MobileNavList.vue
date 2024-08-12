@@ -1,5 +1,5 @@
 <template>
-    <div class="mobileNav-list flex">
+    <div class="mobileNav-list flex" :class="{ active : isMobile }">
         <div>
             <div v-for="item in navContent" :key="item.title" @click="handleNavContent(item.title)" class="flex items-center py-4 w-32 cursor-pointer pl-4" :class="{ active : currentNav === item.title }">
                 <template v-if="item?.content">
@@ -43,6 +43,9 @@ watch(isMobileRef, ()=>{
 
 <style lang="scss" scoped>
 .mobileNav-list{
+    // height: 0 !important;
+    // transition: all .2s ease;
+
     .flex{
         &:hover{
             color: #ff7800;
@@ -62,4 +65,9 @@ watch(isMobileRef, ()=>{
         }
     }
 }
+
+// .mobileNav-list.active{
+//     height: 100vh !important;
+//     transition: all .2s ease;
+// }
 </style>

@@ -21,9 +21,9 @@
                 </div>
             </div>
         </div>
-        <!-- v-show="isMobileContent" -->
-        <div v-show="isMobileContent" :class="{ open : isMobileContent }">
-            <MobileNavList class="absolute left-0 bg-white min-h-lvh w-full lg:hidden" style="z-index: 10000;" v-model:isMobile="isMobileContent"/>
+        <!-- :class="{ open : isMobileContent }" -->
+        <div v-show="isMobileContent">
+            <MobileNavList class="absolute left-0 bg-white w-full lg:hidden min-h-screen" style="z-index: 10000;" v-model:isMobile="isMobileContent"/>
         </div>
     </header>
 </template>
@@ -107,6 +107,4 @@ header{
     }
 }
 </style>
-
-<!-- 這邊關於叉叉的部分可能會用 scss 修改 -->
   
