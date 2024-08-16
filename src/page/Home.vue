@@ -89,10 +89,10 @@
                     <h4 class="font-bold text-xl pl-4 mb-2">精選企業</h4>
                 </template>
                 <template #default>
-                    <template v-if="isMobile">
+                    <div v-if="isMobile">
                         <AutoSwiper title="精選企業" :data="swiperContent.featured" class="mt-6"/>
-                    </template>
-                    <template v-else>
+                    </div>
+                    <div v-else>
                         <div class="grid gap-4 grid-rows-1 grid-cols-2 mb-4 mt-6">
                             <CardItems v-for="item in swiperContent.featured" :key="item" style="padding: 0;">
                                 <div class="flex cursor-pointer featured-container flex-col sm:flex-row item-card">
@@ -109,7 +109,7 @@
                                 </div>
                             </CardItems>
                         </div>
-                    </template>
+                    </div>
                 </template>
                 <template #footer></template>
             </Card>

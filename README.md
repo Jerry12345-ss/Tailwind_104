@@ -33,11 +33,3 @@ npm run build
 ```sh
 npm run lint
 ```
-
-<!-- 
-問題處理 : 
-** 1024 那個問題版面可能再看要怎處理**
-** 是否要做 mobile 下拉式效果 **
-
-1. mobile hamburger menu 要弄成斜線叉叉 => 可以算完成吧??
--->
