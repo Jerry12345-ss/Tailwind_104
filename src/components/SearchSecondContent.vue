@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-wrap">
-        <div class="left-card bg-white border rounded-xl border-orange-300 col-12 mb-8 lg:mb-0">
+    <div class="flex flex-col lg:flex-row">
+        <div class="left-card bg-white border rounded-xl border-orange-300 mb-8 lg:mb-0 flex-1">
             <div style="background-color: rgba(255,238,223,.6);" class="tabBtn-container flex rounded-t-xl">
                 <div class="flex-1 flex lg:block">
                     <button 
@@ -17,7 +17,7 @@
                 <component :is="computTab" :data="searchSecondContent"></component>
             </div>
         </div>
-        <div class="right-card lg:pl-5 flex-1 lg:flex-none">
+        <div class="right-card lg:pl-5 w-full lg:w-[324px]">
             <div class="bg-white rounded-xl h-full">
                 <div class="card-name p-4 flex justify-between items-center" style="border-bottom: 1px solid #e5e7eb;">
                     <div class="flex items-center">
@@ -119,9 +119,7 @@ const computTab = computed(()=>{
     }
 }
 
-.right-card{
-    width: 324px;
-    
+.right-card{    
     .card-name{
         a{
             transition: all .1s ease-out;
@@ -141,11 +139,11 @@ const computTab = computed(()=>{
     }
 }
 
-@media screen and (min-width: 1024px){
-    .flex{
-        .left-card{
-            flex: 1;
-        }
-    }
-}
+// @media screen and (min-width: 1024px){
+//     .flex{
+//         .left-card{
+//             flex: 1;
+//         }
+//     }
+// }
 </style>
