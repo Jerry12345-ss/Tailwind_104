@@ -1,35 +1,22 @@
-# Tailwind_104
+# Tailwind 104 
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
 
-## Recommended IDE Setup
+Tailwind 104 是個為了練習 Tailwind CSS 的練習專案, 以 104 首頁為參考頁面建置
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+![Tailwind 104 Demo Picture](./src/assets/img/demo.png)
 
-## Customize configuration
+## Build with
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+前端
+- `Vue3 Compostion API (setup)`
+- `SCSS`
+- `Javascript`
+- `Tailwind CSS`
 
-## Project Setup
+## How to use 
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+請使用以下指令啟動:
+```bash
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
