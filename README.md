@@ -8,7 +8,6 @@ Tailwind 104 是個為了練習 Tailwind CSS 的練習專案, 以 104 首頁為�
 
 ## Build with
 
-前端
 - `Vue3 Compostion API (setup)`
 - `SCSS`
 - `Javascript`
